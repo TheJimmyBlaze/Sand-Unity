@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    //Properties
+    public float movementSpeed = 5f;
+    public Rigidbody2D rigidBody;
+    public Animator animator;
+
+    //Members
+    private Vector2 movement;
+
+    private void Update()
     {
-        
+        //Input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        //Animation
+        animator.SetFloat("Velocity", movement.magnitude);
+        animator.SetFloat("Horizontal", movement.x);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        //Movement
+        Vector2 newPosition = rigidBody.position + movement * movementSpeed * Time.fixedDeltaTime;
+        rigidBody.MovePosition(newPosition);
     }
 }
