@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         //Mouse
         Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDirection = mousePosition - (Vector2)transform.position;
-        facingRight = lookDirection.x >= 0 ? true : false;
+        facingRight = lookDirection.x >= 0;
         animator.SetBool("FacingRight", facingRight);
     }
 
