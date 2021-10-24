@@ -8,6 +8,10 @@ public class WeaponController : MonoBehaviour
     public Animator animator;
     public GameObject swoosh;
     public Transform swooshSpawner;
+
+    public Rigidbody2D rigidBody;
+    public float swooshMotionCarryOver = 40f;
+
     public Camera cam;
 
     //Members
@@ -33,6 +37,9 @@ public class WeaponController : MonoBehaviour
     {
         Quaternion rotation = transform.rotation;
         rotation *= Quaternion.Euler(0, 0, -90);
-        Instantiate(swoosh, swooshSpawner.position, rotation);
+
+        GameObject spawned = Instantiate(swoosh, swooshSpawner.position, rotation);
+        Rigidbody2D spawnedBody = spawned.GetComponent<Rigidbody2D>();
+        spawnedBody.AddForce(rigidBody.velocity * swooshMotionCarryOver);
     }
 }

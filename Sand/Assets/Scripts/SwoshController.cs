@@ -7,9 +7,10 @@ public class SwoshController : MonoBehaviour
     public float speed = 200f;
     public Rigidbody2D rigidBody;
 
-    private void FixedUpdate()
+
+    void Start()
     {
-        rigidBody.velocity = transform.up * speed * Time.fixedDeltaTime;
+        rigidBody.AddRelativeForce(Vector3.up * speed);
     }
 
     void Destroy()

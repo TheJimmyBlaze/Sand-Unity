@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //Movement
-        Vector2 newPosition = rigidBody.position + movement * movementSpeed * Time.fixedDeltaTime;
-        rigidBody.MovePosition(newPosition);
+        Vector2 relativeMovement = movement * movementSpeed * Time.fixedDeltaTime;
+        rigidBody.AddRelativeForce(relativeMovement);
     }
 }
