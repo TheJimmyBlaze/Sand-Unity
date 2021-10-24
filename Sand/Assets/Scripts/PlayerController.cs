@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 5f;
     public Rigidbody2D rigidBody;
     public Animator animator;
+    public Camera cam;
+
+    public bool facingRight = true;
 
     //Members
     private Vector2 movement;
@@ -18,10 +21,14 @@ public class PlayerController : MonoBehaviour
         //Input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
-        //Animation
         animator.SetFloat("Velocity", movement.magnitude);
         animator.SetFloat("Horizontal", movement.x);
+
+        //Mouse
+        Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDirection = mousePosition - (Vector2)transform.position;
+        facingRight = lookDirection.x >= 0 ? true : false;
+        animator.SetBool("FacingRight", facingRight);
     }
 
     private void FixedUpdate()
