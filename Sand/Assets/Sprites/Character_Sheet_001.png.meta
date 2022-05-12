@@ -613,12 +613,12 @@ TextureImporter:
       name: Character_Sheet_001_21
       rect:
         serializedVersion: 2
-        x: 194
-        y: 232
-        width: 12
-        height: 17
+        x: 193
+        y: 222
+        width: 14
+        height: 34
       alignment: 9
-      pivot: {x: 0.6906967, y: 0.12308996}
+      pivot: {x: 0.47758484, y: 0.0903037}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -626,27 +626,6 @@ TextureImporter:
       bones: []
       spriteID: 18d78750d349b8b10800000000000000
       internalID: 1984843050592533889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Sheet_001_22
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 232
-        width: 12
-        height: 17
-      alignment: 9
-      pivot: {x: 0.30930138, y: 0.11591025}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1769cc2b0f079fb50800000000000000
-      internalID: 6627452505746609777
       vertices: []
       indices: 
       edges: []
